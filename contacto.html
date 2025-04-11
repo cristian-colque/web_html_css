@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Contacto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/contacto_entrenador.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="images/iconoWeb01.png">
+</head>
+<body>
+  <header class="header">
+    <div class="menu container">
+        <nav class="navbar">
+            <ul>
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/clases.html">Clases</a></li>
+                <li><a href="/entrenadores.html">Entrenadores</a></li>
+                <li><a href="/precios.html">Precios</a></li>
+                <li><a href="#">Servicios</a>
+                    <ul class="submenu container">
+                        <li><a href="/contacto.html">Contacto</a></li>
+                        <li><a href="/blogDeFitnes.html">Blog de Fitnes</a></li>
+                        <li><a href="#">Marqueting Digital</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="header-conten container">
+        <div class="header.txt">
+            <h1>Gimnasio </h1>
+        </div>
+    </div>
+  </header>
+
+  <section class="formulario-contacto">
+    <h2>✉️ Contacto</h2>
+    <p class="subtitulo-contacto">¿Tenés dudas, sugerencias o querés sumarte? Escribinos y te respondemos pronto.</p>
+    <form id="formulario" novalidate>
+      <div class="form-grid">
+        <div class="campo">
+          <label for="nombre">👤 Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="campo">
+          <label for="email">📧 Correo electrónico:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+      <div class="campo">
+        <label for="mensaje">💬 Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn-enviar">Enviar</button>
+      <div class="spinner" id="spinner"></div>
+    </form>
+  </section>
+
+  <div id="modal" class="modal">
+    <div class="modal-contenido">
+      <h3>✅ ¡Mensaje enviado con éxito!</h3>
+      <p>Nos pondremos en contacto pronto.</p>
+      <button id="cerrarModal">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    const formulario = document.getElementById("formulario");
+    const modal = document.getElementById("modal");
+    const cerrarModal = document.getElementById("cerrarModal");
+    const spinner = document.getElementById("spinner");
+
+    formulario.addEventListener("submit", (e) => {
+      e.preventDefault();
+      spinner.style.display = "block";
+
+      setTimeout(() => {
+        spinner.style.display = "none";
+        modal.style.display = "flex";
+        formulario.reset();
+      }, 2000);
+    });
+
+    cerrarModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  </script>
+  <footer>
+    <div class="formInscripcionNewsletter">
+        <h2>Suscribirse a nuestro Newsletter</h2>
+        <form action="#" method="POST">
+            <input type="email" name="email" placeholder="Ingrese un correo" required> 
+            <input type="submit" value="Suscribirse">
+        </form>
+    </div>
+    <div class="mapa-container"> 
+        <h2>Mapa interactivo</h2>
+        <div id="mapa"></div>
+        <script>
+            function initMap() {
+            const ubicacion = { lat: -24.1858, lng: -65.2995 }; // Coordenadas ejemplo (San Salvador de Jujuy)
+            const mapa = new google.maps.Map(document.getElementById('mapa'), {
+            zoom: 12,
+            center: ubicacion
+            });
+            new google.maps.Marker({
+            position: ubicacion,
+            map: mapa
+            });
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_S-Pw6qwAJiF-orjJxajJVB2ytb7ZvJ0&callback=initMap" async defer></script>
+        
+        
+    </div>
+    <div class="Redes-container">
+        <a href="https://facebook.com" class="facebook" target="_blank">F</a>
+        <a href="https://twitter.com" class="twitter" target="_blank">T</a>
+        <a href="https://instagram.com" class="instagram" target="_blank">I</a>
+    </div>
+    
+    <p>&copy; 2024 Mi Página. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,691 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    text-align: center;
+    background: rgb(213, 215, 215);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+nav {
+    background-color: #333;
+    color: white;
+    padding: 1em 2em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+}
+
+nav ul li:hover > a {
+    background-color: #555;
+}
+
+/* Estilos para el submenú (oculto por defecto) */
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 0;
+    margin: 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none; /* Oculto por defecto */
+    z-index: 10; /* Asegura que esté por encima de otros elementos */
+}
+
+.submenu li a {
+    display: block;
+    padding: 0.8em 1.2em;
+    text-decoration: none;
+    color: #555;
+}
+
+.submenu li a:hover {
+    background-color: #eee;
+    color: #007bff;
+}
+
+/* Mostrar el submenú al pasar el ratón sobre el elemento padre */
+nav ul li:hover > .submenu {
+    display: block;
+}
+
+
+
+
+/* Contenedor del video */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Ocupa toda la pantalla */
+    overflow: hidden;
+}
+
+/* Video de fondo */
+.video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el video para cubrir toda la sección */
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+/* Contenido encima del video */
+.txtSobreVideo {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    font-family: Arial, sans-serif;
+    background: rgba(0, 0, 0, 0.5); /* Filtro oscuro para mejor visibilidad */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+        /* Contenedor principal */
+        .overlay-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('fondo.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+
+
+        /* Texto animado */
+        .overlay-text { 
+            color: white;
+            font-size: 2.5rem;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            z-index: 2;
+            opacity: 0;
+            animation: fadeInUp 2s ease-in-out forwards;
+        }
+
+        /* Animación del texto */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* SECTION DE TARJETAS */
+        /* Contenedor principal de las Tarjetas */
+        .clasesDestacadas-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f3f3f3;
+        }
+
+        /* Tarjeta*/
+        .card-container {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            margin: 20px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* Imagen de la tarjeta */
+        .card-container img {
+            width: 100%;
+            height: 60%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Contenido de la tarjeta */
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-container h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .card-container p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Efecto hover en la tarjeta */
+        .card-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Efecto hover en la imagen */
+        .card-container:hover img {
+            transform: scale(1.1);
+        }
+
+
+        /*<section class="contadorAnimado-container">  */
+        /* Contenedor principal */
+        .counter-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f3f3f3;
+        }
+
+        /* Estilos del contador */
+        .counter {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #333;
+            
+        }
+
+        /* Animación del contador (de 0 a 500) */
+        @keyframes countAnimation {
+            from {
+                content: "0+";
+            }
+            to {
+                content: "500+";
+            }
+        }
+
+        /* Estilos para simular el contador en CSS puro */
+        .counter::after {
+            content: "0+";
+            animation: numberCount 10s ease-in-out infinite;
+        }
+
+        @keyframes numberCount {
+            0% { content: "0+"; }
+            10% { content: "50+"; }
+            20% { content: "100+"; }
+            30% { content: "150+"; }
+            40% { content: "200+"; }
+            50% { content: "250+"; }
+            60% { content: "300+"; }
+            70% { content: "350+"; }
+            80% { content: "400+"; }
+            90% { content: "450+"; }
+            100% { content: "500+"; }
+        }
+
+
+        .circulo{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: red;
+
+            animation: circuloAnimacion 1800ms ease infinite;
+        }
+        @keyframes circuloAnimacion{
+            0% {
+                background: red;
+            }
+            50%{
+                background: mediumslateblue;
+            }
+            100%{
+                background: blue;
+            }
+        }
+
+        .contadorAnimado-container{
+            width: 100%;
+            height: 100%;
+            background: grey;
+        }
+        .movimientoImagen{
+            max-width: 100%;
+            height: auto;
+            animation: moverBici 3s ease infinite;
+        }
+        @keyframes moverBici {
+            0%{transform: translateX(0%);}
+            10%{transform: translateX(10%);}
+            20%{transform: translateX(20%);}
+            30%{transform: translateX(30%);}
+            40%{transform: translateX(40%);}
+            50%{transform: translateX(50%);}
+            60%{transform: translateX(60%);}
+            70%{transform: translateX(70%);}
+            80%{transform: translateX(80%);}
+            90%{transform: translateX(90%);}
+            100%{transform: translateX(100%);}
+        }
+
+        .contador::after{  
+            padding-left: 47%;   
+            content: "0";
+            font-size: 3rem;
+            font-weight: bold;
+            animation: contando 2s linear infinite;
+        }
+        #numSocios{
+            text-align: center;
+        }
+        @keyframes contando{
+            0% { content: "0"; }
+            10% { content: "50"; }
+            20% { content: "100"; }
+            30% { content: "150"; }
+            40% { content: "200"; }
+            50% { content: "250"; }
+            60% { content: "300"; }
+            70% { content: "350"; }
+            80% { content: "400"; }
+            90% { content: "450"; }
+            100% { content: "500";}
+        }
+
+     /* Carrousel de testimonios */
+
+     .carouselTestimonio-container{
+        display: flex; /*esto los pone en paralelo o por columnas*/
+        overflow: hidden;
+        width: 100;
+        border: 2px solid #333;
+        border-radius: 5px;
+     }
+     .carousel-item{
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        background-color: #007bff;
+        animation: moverCarrousel 2s ease infinite;
+     }
+     @keyframes moverCarrousel{
+        0%{transform:translatex(0);}
+        45% { transform: translateX(100%); }
+        75% { transform: translateX(200%); }
+        100% { transform: translateX(300%); }
+     }
+
+    /* Formulario Footer Pagina Principal */
+    .formInscripcionNewsletter{
+        background: #555;
+        border-radius: 10px;
+        padding: 10px4;
+        margin: 10px 0; /* con el cero ago que solo tenga margin arriba y abajo*/
+        border: 2px solid;
+
+        
+    }
+    .formInscripcionNewsletter h2 {
+        text-align: center;
+        color:cornsilk;
+    }
+
+    .formInscripcionNewsletter input[type="email"]{
+        width: 80%;
+        padding: 10px;
+        background-color: #c4f53dc9;
+        margin: 10px;
+        border: 1px solid;
+        border-radius: 5px;
+    }
+
+    .formInscripcionNewsletter input [type="submit"]{
+        width: 100%;
+        padding: 10px;
+        background-color:aquamarine;
+        border: none;
+        border-radius: 5px;
+        cursor:pointer;
+        font-size: 16px;
+    }
+    .formInscripcionNewsletter input[type="submit"]:hover{
+        background-color: #c4f53dc9;
+    }
+/* Footer redes sociales*/
+
+.Redes-container{
+    display:flex;
+    gap: 20px;
+}
+
+.Redes-container a {
+    color: #f3f3f3;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    display: flex;
+}
+.Redes-container a:hover {
+    transform:scale(1.2);
+}
+.facebook{
+    background-color: #007bff;
+}
+.twitter{
+    background-color: #333;
+}
+.instagram{
+    background-color: darkorchid;
+}
+
+/* Google map o mapa interactivo dentro del footer*/
+.mapa-container h2{
+    text-align: center;
+    background-color: #919191;
+    color: azure;
+}
+
+ #mapa{
+    width: 100%;
+    height: 500px;
+ }
+
+ gmp-map {
+    height: 100%;
+  }
+
+  /* HTML CLASES */
+  /* PUNTO 2 */
+
+.filtroPorCategoria-container h2{
+    text-align: center;
+}
+/* Ocultamos los radio buttons */
+.filtros input[type="radio"]{
+    display: none;
+}
+/* Estilo de los botones de filtro */
+.filtros label{
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    background: #ddd;
+    border-radius: 4px;
+    transition: background 0.3s;
+
+}
+/* Cambia el color del botón activo */
+.filtros input[type="radio"]:checked + label{
+    background: #007bff;
+    color: white;
+    
+}
+/* Contenedor de las categorías */
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+/* Estilo de cada tarjeta */
+.tarjeta{
+    justify-content: center;
+    width: 200px;
+    padding: 20px;
+    margin: 10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: none; /* ocultar todas por defecto*/
+}
+/* Mostrar solo las categoria o tipos seleccionados*/
+        #musculacion:checked ~ .contenedor .musculacion,
+        #crossfit:checked ~ .contenedor .crossfit,
+        #yoga:checked ~ .contenedor .yoga,
+        #spinning:checked ~ .contenedor .spinning,
+        #todos:checked ~ .contenedor .tarjeta {
+            display: block;
+        }
+
+/* PUNTO 2 DOS*/
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); /*asegura que las imágenes se distribuyan en columnas de un tamaño mínimo de 200px, ajustándose automáticamente al ancho disponible. */
+    gap:10px; /*La propiedad gap crea un espacio uniforme entre las imágenes. */
+    padding: 10px;
+}
+.gallery img{
+    width: 100%;
+    height: auto;
+    object-fit: cover; /*Ajuste de imágenes: object-fit: cover asegura que las imágenes llenen su contenedor sin distorsionarse. */
+    border-radius: 8px;
+}
+
+/*PUNTO 3 tres*/
+.puntoTres-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    gap: 10px;
+    padding: 10px;
+}
+.informeClases-container{
+    position:relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.informeClases-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.informeClases-container:hover{
+    transform: scale(2.05);
+}
+.overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* este detalle no me gusta*/
+    transition: opacity 0.3s ease-in-out;
+}
+
+.informeClases-container .overlay{
+    opacity: 1;
+}
+
+/* PUNTO cuatro 4 */
+/* Tabla responsiva de horarios semanales, adaptada para vista en dispositivos móviles y escritorio.*/
+.horarios{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+.horarios th, .horarios td{
+    border:1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+.horarios th{
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+.horarios tr:nth-child(even){ /*nth-child para alternar colores en las filas. */
+    background-color: #f9f9f9;
+}
+.horarios tr:hover{
+    background-color: #e2e2e2; /*se utiliza para resaltar las filas */
+}
+
+@media screen and (max-width:768px){ /*Responsividad: La regla @media asegura que la tabla sea desplazable horizontalmente en pantallas pequeñas, manteniendo la legibilidad. */
+    .horarios{
+        display: block;
+        overflow-x:auto;
+        white-space: nowrap;
+    }
+}
+
+/* PUNTO 3 TRES o PAGINA TRES ENTRENADORES*/
+/* HTML5 + CSS como hacer perfil interactivo con Tarjetas de entrenadores con efecto flip (rotación al hacer hover para ver detalles)*/
+
+.entrenadores-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+.tarEntrenadores{
+    width: 300px;
+    height: 400px;
+    perspective:1000px;
+    padding: 10px;
+}
+.tarCaraInterna{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    
+}
+.tarEntrenadores:hover .tarCaraInterna{
+    transform: rotateY(180deg);
+    
+}
+.tarCaraFrente, .tarCaraTracera{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+.tarCaraFrente{
+    background-color: #f4f4f4;
+    text-align: center;
+    
+}
+.tarCaraTracera{
+    background-color: #007bff;
+    color: white;
+    transform: rotateY(180deg);
+    text-align: center;
+    
+}
+.tarCaraFrente img{
+    border-radius: 10px;
+}
+
+/*HTML5 y CSS como hacer Barra de habilidades animada (Ejemplo: Fuerza 90%, Flexibilidad 80%). */
+.barraHabilidad-container h2{
+    text-align: center;
+}
+.skill-bar{
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+.skill{
+    margin-bottom: 20px;
+}
+.skill span{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.progreso{
+    height: 20px;
+    background-color: #007bff;
+    border-radius: 6px;
+    animation: grow 4s ease-in-out;
+}
+@keyframes grow{
+    from{
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+/* Sistema de rating con estrellas animadas (CSS-only). */
+.rating{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+.rating input{
+    display:none;
+}
+.rating .star{
+    font-size: 2rem;
+    color: #d3ef05;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
+.rating .star:hover, .rating .star:hover ~ .star{
+    color: #ffa400;
+    transform: scale(1.5);
+}
+.rating input:checked ~ .star{
+    color: #ffa400;
+}
+
+
+
+
+
+
+

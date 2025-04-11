@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 y CSS3</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/iconoWeb01.png">
+</head>
+<body>
+    <header class="header">
+        <div class="menu container">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/clases.html">Clases</a></li>
+                    <li><a href="/entrenadores.html">Entrenadores</a></li>
+                    <li><a href="/precios.html">Precios</a></li>
+                    <li><a href="#">Servicios</a>
+                        <ul class="submenu container">
+                            <li><a href="/ontacto.html">Contacto</a></li>
+                            <li><a href="/blogDeFitnes.html">Blog de Fitnes</a></li>
+                            <li><a href="#">Marqueting Digital</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-conten container">
+            <div class="header.txt">
+                <h1>Gimnasio </h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="video-container">
+            <!--video de fondo-->
+            <video autoplay muted loop>
+                <source src="multimedia/videoMotivacional360p.mp4" type="video/mp4">
+            </video>
+            <!--Contenido encima/sobre el video-->
+            <div class="txtSobreVideo">
+                <h1 class="overlay-text" >Inscribirse</h1>
+            </div>
+        </section>
+        <section class="clasesDestacadas-container">
+            <!--Tarjeta 1-->
+            <div class="card-container">
+                <img src="images/alpinismo01.jpeg" alt="Imagen">
+                <div class="card-content"> 
+                    <h2>Alpinismo</h2>
+                    <p>Desarrolla resistencia y controla tu respiracion.</p>
+                </div>
+            </div>
+            <!--Tarjeta 2-->
+            <div class="card-container">
+                <img src="images/boxeo01.jpeg" alt="Imagen">
+                <div class="card-content">
+                    <h2>Boxeo</h2>
+                    <p>Aprende defensa personal.</p>
+                </div>
+            </div>
+            <!--Tarjeta 3-->
+            <div class="card-container">
+                <img src="images/gym01.avif" alt="Imagen">
+                <div class="card-content">
+                    <h2>Potencia</h2>
+                    <p>Desarrolla fuerza explosiva.</p>
+                </div>
+            </div>
+            <!--Tarjeta 4-->
+            <div class="card-container">
+                <img src="images/gym02.jpg" alt="Imagen">
+                <div class="card-content">
+                    <h2>Fitnes</h2>
+                    <p>Marca y contornea tu cuerpo.</p>
+                </div>
+            </div>
+             <!--Tarjeta 5-->
+             <div class="card-container">
+                <img src="images/mountainbikeTour01.jpg" alt="Imagen">
+                <div class="card-content">
+                    <h2>Mountain Bike</h2>
+                    <p>Pon a prueba tu destreza y descubre senderos.</p>
+                </div>
+            </div>
+        </section>
+        <section class="contadorAnimado-container">
+            <!-- <div class="circulo">
+            </div> -->
+            <div class="movimientoImagen">
+                <img src="images/bicicletaCarrera04.png" alt="biciDeCarrera">
+            </div>
+            <div class="contador">  
+                <h2 id="numSocios">Numero de socios satisfechos </h2>
+            </div>
+        </section>
+        <section class="carouselTestimonio-container">
+            <div class="carousel-item"> Testimonio 1:"Excelente servicio." </div>
+            <div class="carousel-item"> Testimonio 2:"Ningun problema." </div>
+            <div class="carousel-item"> Testimonio 3:"Muy recomendado." </div>
+            <div class="carousel-item"> Testimonio 4:"Volveria a contratarlos." </div>
+        </section>   
+    </main>
+    <footer>
+        <div class="formInscripcionNewsletter">
+            <h2>Suscribirse a nuestro Newsletter</h2>
+            <form action="#" method="POST">
+                <input type="email" name="email" placeholder="Ingrese un correo" required> 
+                <input type="submit" value="Suscribirse">
+            </form>
+        </div>
+        <div class="mapa-container"> 
+            <h2>Mapa interactivo</h2>
+            <div id="mapa"></div>
+            <script>
+                function initMap() {
+                const ubicacion = { lat: -24.1858, lng: -65.2995 }; // Coordenadas ejemplo (San Salvador de Jujuy)
+                const mapa = new google.maps.Map(document.getElementById('mapa'), {
+                zoom: 12,
+                center: ubicacion
+                });
+                new google.maps.Marker({
+                position: ubicacion,
+                map: mapa
+                });
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_S-Pw6qwAJiF-orjJxajJVB2ytb7ZvJ0&callback=initMap" async defer></script>
+            
+            
+        </div>
+        <div class="Redes-container">
+            <a href="https://facebook.com" class="facebook" target="_blank">F</a>
+            <a href="https://twitter.com" class="twitter" target="_blank">T</a>
+            <a href="https://instagram.com" class="instagram" target="_blank">I</a>
+        </div>
+        
+        <p>&copy; 2024 Mi Página. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>  

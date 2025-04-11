@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes y Precios - GymTop</title>
+    <link rel="stylesheet" href="css/precios.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/iconoWeb01.png">
+</head>
+<body>
+    <header class="header">
+        <div class="menu container">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/clases.html">Clases</a></li>
+                    <li><a href="/entrenadores.html">Entrenadores</a></li>
+                    <li><a href="/precios.html">Precios</a></li>
+                    <li><a href="#">Servicios</a>
+                        <ul class="submenu container">
+                            <li><a href="/contacto.html">Contacto</a></li>
+                            <li><a href="/blogDeFitnes.html">Blog de Fitnes</a></li>
+                            <li><a href="#">Marqueting Digital</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-conten container">
+            <div class="header.txt">
+                <h1>Gimnasio </h1>
+            </div>
+        </div>
+    </header>
+    <main class="pricing-main">
+        <section class="pricing-section">
+            <h1 class="pricing-title">Elige tu plan perfecto</h1>
+            
+            <!-- Toggle para cambio entre mensual/anual -->
+            <div class="plan-toggle">
+                <span>Mensual</span>
+                <label class="switch">
+                    <input type="checkbox" id="plan-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span>Anual <small>(20% descuento)</small></span>
+            </div>
+
+            <!-- Tabla de precios -->
+            <div class="pricing-grid">
+                <!-- Plan Básico -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Básico</h3>
+                        <div class="price monthly">$1,500<span>/mes</span></div>
+                        <div class="price yearly hidden">$1,200<span>/mes</span></div>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Acceso a área de pesas</li>
+                        <li><i class="fas fa-check"></i> Acceso a área de cardio</li>
+                        <li class="tooltip">
+                            <i class="fas fa-times"></i> Sin clases grupales
+                            <span class="tooltip-text">Las clases grupales requieren plan Premium</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn">Elegir plan</a>
+                </div>
+
+                <!-- Plan Premium (destacado) -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Popular</div>
+                    <div class="pricing-header">
+                        <h3>Premium</h3>
+                        <div class="price monthly">$2,500<span>/mes</span></div>
+                        <div class="price yearly hidden">$2,000<span>/mes</span></div>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Todo en Básico</li>
+                        <li><i class="fas fa-check"></i> Clases grupales ilimitadas</li>
+                        <li class="tooltip">
+                            <i class="fas fa-check"></i> Acceso a spa
+                            <span class="tooltip-text">Área de spa y sauna incluida</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn featured-btn">Elegir plan</a>
+                </div>
+
+                <!-- Plan VIP -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>VIP</h3>
+                        <div class="price monthly">$4,000<span>/mes</span></div>
+                        <div class="price yearly hidden">$3,200<span>/mes</span></div>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Todo en Premium</li>
+                        <li><i class="fas fa-check"></i> Entrenador personal 1x/semana</li>
+                        <li class="tooltip">
+                            <i class="fas fa-check"></i> Toalla y locker premium
+                            <span class="tooltip-text">Incluye servicio de toallas y locker asignado</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn">Elegir plan</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/precios.js"></script>
+    <footer>
+        <div class="formInscripcionNewsletter">
+            <h2>Suscribirse a nuestro Newsletter</h2>
+            <form action="#" method="POST">
+                <input type="email" name="email" placeholder="Ingrese un correo" required> 
+                <input type="submit" value="Suscribirse">
+            </form>
+        </div>
+        <div class="mapa-container"> 
+            <h2>Mapa interactivo</h2>
+            <div id="mapa"></div>
+            <script>
+                function initMap() {
+                const ubicacion = { lat: -24.1858, lng: -65.2995 }; // Coordenadas ejemplo (San Salvador de Jujuy)
+                const mapa = new google.maps.Map(document.getElementById('mapa'), {
+                zoom: 12,
+                center: ubicacion
+                });
+                new google.maps.Marker({
+                position: ubicacion,
+                map: mapa
+                });
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_S-Pw6qwAJiF-orjJxajJVB2ytb7ZvJ0&callback=initMap" async defer></script>
+            
+            
+        </div>
+        <div class="Redes-container">
+            <a href="https://facebook.com" class="facebook" target="_blank">F</a>
+            <a href="https://twitter.com" class="twitter" target="_blank">T</a>
+            <a href="https://instagram.com" class="instagram" target="_blank">I</a>
+        </div>
+        
+        <p>&copy; 2024 Mi Página. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

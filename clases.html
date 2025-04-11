@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clases</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" type="image/png" href="images/iconoWeb01.png">
+    </head>
+<body>
+    <header class="header">
+        <div class="menu container">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/clases.html">Clases</a></li>
+                    <li><a href="/entrenadores.html">Entrenadores</a></li>
+                    <li><a href="/precios.html">Precios</a></li>
+                    <li><a href="#">Servicios</a>
+                        <ul class="submenu container">
+                            <li><a href="/contacto.html">Contacto</a></li>
+                            <li><a href="/blogDeFitnes.html">Blog de Fitnes</a></li>
+                            <li><a href="#">Marqueting Digital</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-conten container">
+            <div class="header.txt">
+                <h1>Gimnasio </h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="filtroPorCategoria-container">
+            <h2>Filtrar por Categoría</h2>
+            <div class="filtros">
+                <input type="radio" id="todos" name="categoria" checked>
+                <label for="todos">Todos</label>
+        
+                <input type="radio" id="musculacion" name="categoria">
+                <label for="musculacion">Musculación</label>
+        
+                <input type="radio" id="crossfit" name="categoria">
+                <label for="crossfit">CrossFit</label>
+        
+                <input type="radio" id="yoga" name="categoria">
+                <label for="yoga">Yoga</label>
+        
+                <input type="radio" id="spinning" name="categoria">
+                <label for="spinning">Spinning</label>
+            </div>
+        
+            <div class="contenedor">
+                <div class="tarjeta musculacion">💪 Musculación</div>
+                <div class="tarjeta crossfit">🏋️ CrossFit</div>
+                <div class="tarjeta yoga">🧘 Yoga</div>
+                <div class="tarjeta spinning">🚴 Spinning</div>
+                <div class="tarjeta musculacion">💪 Más Musculación</div>
+                <div class="tarjeta crossfit">🏋️ Más CrossFit</div>
+            </div>
+        </section>
+        <!--PUNTO DOS  Galería tipo "masonry" con CSS Grid, mostrando imágenes de diferentes alturas.-->
+        <section class="galeria-container">
+            <div class="gallery">
+                <img src="images/motivacion01.jpg" alt="motivacion 01">
+                <img src="images/motivacion02.jpeg" alt="motivacion 02">
+                <img src="images/motivacion03.jpg" alt="motivacion 03">
+                <img src="images/motivacion04.jpeg" alt="motivacion 04">
+                <img src="images/motivacion06.jpg" alt="motivacion 06">
+            </div>
+        </section>
+        <!--PUNTO TRES  Tarjetas con información de las clases, con efectos de zoom y overlay al pasar el
+cursor.-->
+        <section class="puntoTres-container">
+            <div class="informeClases-container">
+                <div class="overlay">
+                    <h2>Clases de Musculacion</h2>
+                    <p>Leer tarjeta</p>
+                </div>
+                <img src="images/infClasesMusculacion01.jpg" alt="Clases de Musculacion">
+            </div>
+            <div class="informeClases-container">
+                <div class="overlay">
+                    <h2>Clases de CrossFit</h2>
+                    <p>Leer tarjeta</p>
+                </div>
+                <img src="images/infClasesCrossfit01.jpg" alt="Clases de CrossFit">
+            </div>
+            <div class="informeClases-container">
+                <div class="overlay">
+                    <h2>Clases de Yoga</h2>
+                    <p>Leer tarjeta</p>
+                </div>
+                <img src="images/infClasesYoga01.jpg" alt="Clases de Yoga">
+            </div>
+            <div class="informeClases-container">
+                <div class="overlay">
+                    <h2>Clases de Spinning</h2>
+                    <p>Leer tarjeta</p>
+                </div>
+                <img src="images/infClasesSpinning01.jpeg" alt="Clases de Spinning">
+            </div>
+        </section>
+        <!--PUNTO 4 cuatro Tabla responsiva de horarios semanales, adaptada para vista en dispositivos móviles y escritorio.-->
+        <article class="horarios-container">
+            <table class="horarios">
+                <thead>
+                    <th>Día</th>
+                    <th>Horario</th>
+                    <th>Clase</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lunes</td>
+                        <td>10:00 AM - 13:00 PM</td>
+                        <td>Musculación</td>
+                    </tr>
+                    <tr>
+                        <td>Martes</td>
+                        <td>9:00 AM - 13:00 PM</td>
+                        <td>CrossFit</td>
+                    </tr>
+                    <tr>
+                        <td>Miércoles</td>
+                        <td>9:00 AM - 12:00 AM</td>
+                        <td>Yoga</td>
+                    </tr>
+                    <tr>
+                        <td>Jueves</td>
+                        <td>8:00 AM - 11:00 AM</td>
+                        <td>Spinning</td>
+                    </tr>
+                    <tr>
+                        <td>Viernes</td>
+                        <td>8:00 AM - 10:00 AM</td>
+                        <td>Musculacion</td>
+                    </tr>
+                    <tr>
+                        <td>Viernes</td>
+                        <td>10:00 AM - 12:00 AM</td>
+                        <td>CrossFit</td>
+                    </tr>
+                    <tr>
+                        <td>Sabado</td>
+                        <td>8:00 AM - 10:00 AM</td>
+                        <td>Yoga</td>
+                    </tr>
+                    <tr>
+                        <td>Sabado</td>
+                        <td>10:00 AM - 12:00 AM</td>
+                        <td>Spinning</td>
+                    </tr>
+                    <tr>
+                        <td>Domingo</td>
+                        <td>00:00 AM - 23:59 PM</td>
+                        <td>Libre</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+        <article></article>
+        <aside></aside>
+    </main>
+    <footer>
+        <div class="formInscripcionNewsletter">
+            <h2>Suscribirse a nuestro Newsletter</h2>
+            <form action="#" method="POST">
+                <input type="email" name="email" placeholder="Ingrese un correo" required> 
+                <input type="submit" value="Suscribirse">
+            </form>
+        </div>
+        <div class="mapa-container"> 
+            <h2>Mapa interactivo</h2>
+            <div id="mapa"></div>
+            <script>
+                function initMap() {
+                const ubicacion = { lat: -24.1858, lng: -65.2995 }; // Coordenadas ejemplo (San Salvador de Jujuy)
+                const mapa = new google.maps.Map(document.getElementById('mapa'), {
+                zoom: 12,
+                center: ubicacion
+                });
+                new google.maps.Marker({
+                position: ubicacion,
+                map: mapa
+                });
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_S-Pw6qwAJiF-orjJxajJVB2ytb7ZvJ0&callback=initMap" async defer></script>
+            
+            
+        </div>
+        <div class="Redes-container">
+            <a href="https://facebook.com" class="facebook" target="_blank">F</a>
+            <a href="https://twitter.com" class="twitter" target="_blank">T</a>
+            <a href="https://instagram.com" class="instagram" target="_blank">I</a>
+        </div>
+        
+        <p>&copy; 2024 Mi Página. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

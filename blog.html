@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Fitness - GymTop</title>
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/iconoWeb01.png">
+</head>
+<body>
+    <header class="header">
+        <div class="menu container">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/clases.html">Clases</a></li>
+                    <li><a href="/entrenadores.html">Entrenadores</a></li>
+                    <li><a href="/precios.html">Precios</a></li>
+                    <li><a href="#">Servicios</a>
+                        <ul class="submenu container">
+                            <li><a href="/contacto.html">Contacto</a></li>
+                            <li><a href="/blogDeFitnes.html">Blog de Fitnes</a></li>
+                            <li><a href="#">Marqueting Digital</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-conten container">
+            <div class="header.txt">
+                <h1>Gimnasio </h1>
+            </div>
+        </div>
+    </header>
+    <main class="blog-main">
+        <!-- Sistema de filtrado por categorías -->
+        <section class="category-filters">
+            <div class="filter-buttons">
+                <input type="radio" id="all" name="category-filter" value="all" checked>
+                <label for="all"><i class="fas fa-star"></i> Todos</label>
+                
+                <input type="radio" id="nutrition" name="category-filter" value="nutrition">
+                <label for="nutrition"><i class="fas fa-apple-alt"></i> Nutrición</label>
+                
+                <input type="radio" id="training" name="category-filter" value="training">
+                <label for="training"><i class="fas fa-dumbbell"></i> Entrenamiento</label>
+                
+                <input type="radio" id="wellness" name="category-filter" value="wellness">
+                <label for="wellness"><i class="fas fa-spa"></i> Bienestar</label>
+            </div>
+        </section>
+
+        <!-- Grid de artículos -->
+        <section class="blog-grid">
+            <!-- Artículo destacado -->
+            <article class="blog-card featured nutrition" data-category="nutrition">
+                <div class="card-image">
+                    <img src="images/img_blog/nutricion-hero.jfif" alt="Alimentos saludables" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="category-tag">Nutrición</span>
+                        <span class="reading-time"><i class="far fa-clock"></i> 8 min</span>
+                    </div>
+                    <h2>Los Superalimentos del Futuro: Qué Comer en 2024</h2>
+                    <p class="excerpt">La investigación científica ha identificado nuevos alimentos con propiedades extraordinarias. Te mostramos cómo incorporarlos...</p>
+                    <div class="author-info">
+                        <div class="author-avatar">DM</div>
+                        <div>
+                            <span class="author-name">Dra. Laura Méndez</span>
+                            <span class="publish-date">15 Ene 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Artículos normales -->
+            <article class="blog-card training" data-category="training">
+                <div class="card-image">
+                    <img src="images/img_blog/entrenamiento-funcional.jfif" alt="Entrenamiento funcional" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="category-tag">Entrenamiento</span>
+                        <span class="reading-time"><i class="far fa-clock"></i> 5 min</span>
+                    </div>
+                    <h2>Entrenamiento Funcional: Más Allá de las Pesas</h2>
+                    <p class="excerpt">Cómo mejorar tu movilidad y fuerza real con ejercicios que imitan los movimientos cotidianos...</p>
+                    <div class="author-info">
+                        <div class="author-avatar" style="background-color: #e74c3c;">CR</div>
+                        <div>
+                            <span class="author-name">Coach Carlos Ruiz</span>
+                            <span class="publish-date">12 Ene 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Más artículos... -->
+        </section>
+
+        <!-- Sección de comentarios -->
+        <section class="comments-section">
+            <h2><i class="fas fa-comments"></i> Comunidad GymTop</h2>
+            
+            <div class="comments-list">
+                <div class="comment">
+                    <div class="comment-avatar">JP</div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <h3>Juan Pérez</h3>
+                            <span class="comment-date">Hace 2 días</span>
+                            <div class="comment-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <p>Excelente artículo, ya empecé a implementar estos consejos y he notado mejoras en mi rendimiento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="formInscripcionNewsletter">
+            <h2>Suscribirse a nuestro Newsletter</h2>
+            <form action="#" method="POST">
+                <input type="email" name="email" placeholder="Ingrese un correo" required> 
+                <input type="submit" value="Suscribirse">
+            </form>
+        </div>
+        <div class="mapa-container"> 
+            <h2>Mapa interactivo</h2>
+            <div id="mapa"></div>
+            <script>
+                function initMap() {
+                const ubicacion = { lat: -24.1858, lng: -65.2995 }; // Coordenadas ejemplo (San Salvador de Jujuy)
+                const mapa = new google.maps.Map(document.getElementById('mapa'), {
+                zoom: 12,
+                center: ubicacion
+                });
+                new google.maps.Marker({
+                position: ubicacion,
+                map: mapa
+                });
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_S-Pw6qwAJiF-orjJxajJVB2ytb7ZvJ0&callback=initMap" async defer></script>
+            
+            
+        </div>
+        <div class="Redes-container">
+            <a href="https://facebook.com" class="facebook" target="_blank">F</a>
+            <a href="https://twitter.com" class="twitter" target="_blank">T</a>
+            <a href="https://instagram.com" class="instagram" target="_blank">I</a>
+        </div>
+        
+        <p>&copy; 2024 Mi Página. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/blog.js"></script>
+</body>
+</html>
